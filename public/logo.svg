@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" role="img" aria-label="TRT Associate">
+  <title>TRT Associate</title>
+  <rect x="4" y="4" width="48" height="48" rx="11" fill="#0B4F9E"/>
+  <g fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M10 19h12M16 19v20"/>
+    <path d="M26 39V19h4.5a5.2 5.2 0 0 1 0 10.4H26M31 29.4 36 39"/>
+    <path d="M38 19h8M42 19v20" transform="translate(0 0)"/>
+  </g>
+  <rect x="10" y="44" width="36" height="2.4" rx="1.2" fill="#8DB7EE"/>
+  <text x="64" y="30" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="800" fill="#0A1F44" letter-spacing="-0.5">TRT Associate</text>
+  <text x="65" y="46" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="600" fill="#5B6678" letter-spacing="2.2">TAX · ACCOUNTING · COMPLIANCE</text>
+</svg>
