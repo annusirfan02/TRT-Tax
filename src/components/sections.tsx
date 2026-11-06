@@ -1,7 +1,7 @@
 import { CheckCircle2, MessageCircle, Phone } from "lucide-react";
 import { ButtonLink, Section, SectionHeading } from "./ui";
 import { Reveal } from "./Reveal";
-import { company, whatsappLink } from "@/lib/site";
+import { company, telHref, whatsappLink } from "@/lib/site";
 import type { TextItem } from "@/lib/services";
 
 export function CtaSection({
@@ -16,7 +16,7 @@ export function CtaSection({
   const wa = whatsappLink();
   return (
     <section aria-labelledby="cta-heading" className="relative overflow-hidden bg-brand-600 py-16 sm:py-20">
-      <div className="bg-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto flex w-full max-w-7xl flex-col items-start gap-8 px-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <h2 id="cta-heading" className="text-3xl font-bold !text-white sm:text-4xl">{title}</h2>
@@ -31,7 +31,7 @@ export function CtaSection({
               <MessageCircle className="h-4 w-4" aria-hidden="true" /> WhatsApp Us
             </ButtonLink>
           ) : company.phone ? (
-            <ButtonLink href={`tel:${company.phone.replace(/[^\d+]/g, "")}`} variant="ghost-light">
+            <ButtonLink href={telHref(company.phone)} variant="ghost-light">
               <Phone className="h-4 w-4" aria-hidden="true" /> Call Us
             </ButtonLink>
           ) : null}

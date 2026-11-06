@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
-import { company, whatsappLink } from "@/lib/site";
+import { company, telHref, whatsappLink } from "@/lib/site";
 import { services } from "@/lib/services";
 
 const heading = "text-xs font-bold uppercase tracking-[0.18em] text-brand-200";
@@ -79,11 +79,11 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand-200" aria-hidden="true" />
-              {company.phone ? (
-                <a className={link} href={`tel:${company.phone.replace(/[^\d+]/g, "")}`}>{company.phone}</a>
-              ) : (
-                <span className="text-brand-100/70">{company.placeholders.phone}</span>
-              )}
+              <span className="flex flex-col gap-1">
+                {company.phones.map((n) => (
+                  <a key={n} className={link} href={telHref(n)}>{n}</a>
+                ))}
+              </span>
             </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-200" aria-hidden="true" />

@@ -37,14 +37,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  color: var(--color-navy-900);
-  letter-spacing: -0.02em;
-  text-wrap: balance;
+/* In the base layer so Tailwind colour utilities (e.g. text-brand-200) can override heading colour */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy-900);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
 }
 
 :focus-visible {
@@ -83,9 +86,7 @@ h4 {
   }
 }
 
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* Smooth dark-to-brand-blue (#0B4F9E) fade used behind hero/CTA sections */
+.hero-fade {
+  background: linear-gradient(105deg, #020a18 0%, #05204a 55%, #083a78 100%);
 }

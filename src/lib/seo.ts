@@ -43,7 +43,7 @@ export function organizationSchema() {
       ...(company.address ? { streetAddress: company.address } : {}),
     },
     ...(company.email ? { email: company.email } : {}),
-    ...(company.phone ? { telephone: company.phone } : {}),
+    ...(company.phones.length ? { telephone: company.phones.map((n) => (n.startsWith("0") ? `+92${n.slice(1).replace(/\D/g, "")}` : n)) } : {}),
     sameAs: Object.values(company.social).filter(Boolean),
   };
 }

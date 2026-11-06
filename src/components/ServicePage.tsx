@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Info } from "lucide-react";
 import { ButtonLink, Section, SectionHeading } from "./ui";
@@ -37,7 +38,21 @@ export function ServicePage({ service }: { service: Service }) {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy-900 pb-20 pt-10 sm:pb-28 sm:pt-14">
-        <div className="bg-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+        {service.heroImage ? (
+          <>
+            <Image src={service.heroImage} alt="" fill priority sizes="100vw" className="object-cover object-center" />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(100deg, rgba(2,10,24,0.94) 0%, rgba(5,32,74,0.86) 45%, rgba(8,58,120,0.62) 100%)",
+              }}
+              aria-hidden="true"
+            />
+          </>
+        ) : (
+          <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
+        )}
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
           <nav aria-label="Breadcrumb" className="text-sm text-brand-200">
             <ol className="flex flex-wrap items-center gap-1.5">

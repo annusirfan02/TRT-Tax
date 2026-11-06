@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { ButtonLink, Section, SectionHeading } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
@@ -28,7 +29,23 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy-900">
-        <div className="bg-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+        <Image
+          src="/hero-city-blue.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Black → #0B4F9E gradient fade keeps the white text readable over the photo */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(3,14,34,0.88) 0%, rgba(5,24,56,0.7) 40%, rgba(8,40,88,0.3) 75%, rgba(8,40,88,0.12) 100%)",
+          }}
+          aria-hidden="true"
+        />
         <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-100">
@@ -58,10 +75,19 @@ export default function HomePage() {
 
       {/* About */}
       <Section id="about" labelledBy="about-h">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
           <Reveal>
             <div id="about-h">
               <SectionHeading eyebrow="About Us" title="A Professional Consultancy Built Around Your Needs" />
+            </div>
+            <div className="relative mt-8 aspect-[3/2] w-full overflow-hidden rounded-2xl shadow-lift">
+              <Image
+                src="/about-team.jpg"
+                alt="Two business professionals reviewing a document on a tablet"
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
             </div>
           </Reveal>
           <Reveal delay={100}>

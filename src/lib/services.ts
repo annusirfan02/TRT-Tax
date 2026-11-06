@@ -20,6 +20,8 @@ export interface Service {
   seoDescription: string;
   keywords: string[];
   heroHeadline: string;
+  /** Optional hero background photo (path in /public). */
+  heroImage?: string;
   intro: string;
   itemsHeading: string;
   items: TextItem[];
@@ -52,6 +54,7 @@ export const services: Service[] = [
       "sales tax registration Pakistan",
     ],
     heroHeadline: "Professional Tax Solutions for Individuals and Businesses.",
+    heroImage: "/hero-income-tax.jpg",
     intro:
       "TRT Associate provides comprehensive income tax and sales tax consultancy services to individuals, entrepreneurs, and businesses in Pakistan. We assist clients with tax registration, return preparation, filing, documentation, and ongoing compliance requirements.",
     itemsHeading: "Our Income & Sales Tax Services",
@@ -116,6 +119,7 @@ export const services: Service[] = [
       "corporate compliance services Pakistan",
     ],
     heroHeadline: "Build Your Business on a Strong Corporate Foundation.",
+    heroImage: "/hero-secp.jpg",
     intro:
       "TRT Associate assists entrepreneurs, startups, and established businesses with company incorporation, corporate documentation, and ongoing SECP compliance requirements in Pakistan.",
     itemsHeading: "Our SECP & Incorporation Services",
@@ -180,6 +184,7 @@ export const services: Service[] = [
       "internal audit Pakistan",
     ],
     heroHeadline: "Financial Clarity for Better Business Decisions.",
+    heroImage: "/hero-accounting.jpg",
     intro:
       "TRT Associate supports businesses with accounting, financial reporting, bookkeeping, and audit-related services designed to improve financial visibility and support informed business decisions.",
     itemsHeading: "Our Accounting & Audit Services",
@@ -244,6 +249,7 @@ export const services: Service[] = [
       "corporate governance advisory Karachi",
     ],
     heroHeadline: "Protect Your Business Through Smarter Risk Management.",
+    heroImage: "/hero-risk.jpg",
     intro:
       "TRT Associate helps businesses identify potential risks, strengthen internal controls, and understand applicable regulatory and compliance requirements through structured consultancy and advisory support.",
     itemsHeading: "Our Risk & Compliance Services",

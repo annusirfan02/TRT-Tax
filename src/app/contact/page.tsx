@@ -1,7 +1,7 @@
 import { Mail, MapPin, MessageCircle, Phone, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { ButtonLink, Section, SectionHeading } from "@/components/ui";
-import { company, whatsappLink } from "@/lib/site";
+import { company, telHref, whatsappLink } from "@/lib/site";
 import { serviceOptions } from "@/lib/contact-schema";
 import { buildMetadata } from "@/lib/seo";
 
@@ -28,9 +28,9 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
     {
       icon: Phone,
       label: "Phone",
-      value: company.phone ?? company.placeholders.phone,
-      href: company.phone ? `tel:${company.phone.replace(/[^\d+]/g, "")}` : null,
-      placeholder: !company.phone,
+      value: company.phones.join("  |  ") || company.placeholders.phone,
+      href: null as string | null,
+      placeholder: company.phones.length === 0,
     },
     {
       icon: Mail,
@@ -44,7 +44,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
   return (
     <>
       <section className="relative overflow-hidden bg-navy-900 py-16 sm:py-24">
-        <div className="bg-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
           <SectionHeading
             as="h1"
@@ -74,7 +74,13 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                   </span>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-grey-500">{r.label}</p>
-                    {r.href ? (
+                    {r.label === "Phone" && company.phones.length > 0 ? (
+                      <div className="flex flex-col">
+                        {company.phones.map((n) => (
+                          <a key={n} href={telHref(n)} className="font-semibold text-navy-900 hover:text-brand-600">{n}</a>
+                        ))}
+                      </div>
+                    ) : r.href ? (
                       <a href={r.href} className="font-semibold text-navy-900 hover:text-brand-600">{r.value}</a>
                     ) : (
                       <p className={r.placeholder ? "italic text-grey-500" : "font-semibold text-navy-900"}>{r.value}</p>
