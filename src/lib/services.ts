@@ -16,6 +16,9 @@ export interface Service {
   title: string;
   shortTitle: string;
   cardDescription: string;
+  /** Photo shown on the home-page service card (path in /public). */
+  cardImage: string;
+  cardImageAlt: string;
   seoTitle: string;
   seoDescription: string;
   keywords: string[];
@@ -23,6 +26,13 @@ export interface Service {
   /** Optional hero background photo (path in /public). */
   heroImage?: string;
   intro: string;
+  overviewImage: string;
+  overviewAlt: string;
+  ctaImage: string;
+  benefitsImage: string;
+  benefitsAlt: string;
+  overviewTitle: string;
+  overviewPoints: string[];
   itemsHeading: string;
   items: TextItem[];
   benefitsHeading: string;
@@ -42,6 +52,8 @@ export const services: Service[] = [
     icon: Landmark,
     title: "Income & Sales Tax Registration, Filing and Compliance",
     shortTitle: "Income & Sales Tax",
+    cardImage: "/card-income-tax.jpg",
+    cardImageAlt: "Calculator and receipts on a desk for tax calculation",
     cardDescription:
       "NTN and sales tax registration, return preparation and filing assistance, withholding compliance, and FBR notice support.",
     seoTitle: "Tax Consultant in Karachi | NTN, Income & Sales Tax Filing Pakistan",
@@ -57,6 +69,17 @@ export const services: Service[] = [
     heroImage: "/hero-income-tax.jpg",
     intro:
       "TRT Associate provides comprehensive income tax and sales tax consultancy services to individuals, entrepreneurs, and businesses in Pakistan. We assist clients with tax registration, return preparation, filing, documentation, and ongoing compliance requirements.",
+    overviewImage: "/ov-income-tax.jpg",
+    overviewAlt: "Two people filling in tax paperwork at a desk with a calculator",
+    ctaImage: "/cta-income-tax.jpg",
+    benefitsImage: "/benefit-income-tax.jpg",
+    benefitsAlt: "A desk with a calculator, paper clips and tax paperwork",
+    overviewTitle: "Tax compliance, explained clearly and handled with care",
+    overviewPoints: [
+      "Registration, returns and records handled in one place",
+      "Guidance based on FBR requirements and the IRIS portal",
+      "Documents prepared for your review before anything is filed",
+    ],
     itemsHeading: "Our Income & Sales Tax Services",
     items: [
       { title: "NTN Registration", description: "Assistance with National Tax Number registration for individuals, businesses, AOPs, and companies." },
@@ -107,6 +130,8 @@ export const services: Service[] = [
     icon: Building2,
     title: "SECP Compliance & Incorporation",
     shortTitle: "SECP Compliance & Incorporation",
+    cardImage: "/card-secp.jpg",
+    cardImageAlt: "Hands signing a company document",
     cardDescription:
       "Company incorporation, corporate documentation, statutory filings and ongoing compliance with the SECP.",
     seoTitle: "SECP Company Registration Pakistan | Company Incorporation Karachi",
@@ -122,6 +147,17 @@ export const services: Service[] = [
     heroImage: "/hero-secp.jpg",
     intro:
       "TRT Associate assists entrepreneurs, startups, and established businesses with company incorporation, corporate documentation, and ongoing SECP compliance requirements in Pakistan.",
+    overviewImage: "/ov-secp.jpg",
+    overviewAlt: "Founders planning a new business at a startup office",
+    ctaImage: "/cta-secp.jpg",
+    benefitsImage: "/benefit-secp.jpg",
+    benefitsAlt: "A small team discussing a business plan around a table",
+    overviewTitle: "From first idea to a properly incorporated company",
+    overviewPoints: [
+      "Help choosing between a private limited company, SMC or LLP",
+      "Constitutional documents and forms prepared for your review",
+      "Clear guidance on obligations after incorporation",
+    ],
     itemsHeading: "Our SECP & Incorporation Services",
     items: [
       { title: "Private Limited Company Registration", description: "Assistance with incorporation of private limited companies." },
@@ -172,6 +208,8 @@ export const services: Service[] = [
     icon: LineChart,
     title: "Financial Accounting & Auditing",
     shortTitle: "Financial Accounting & Auditing",
+    cardImage: "/card-accounting.jpg",
+    cardImageAlt: "Accountant reviewing financial reports with a calculator",
     cardDescription:
       "Bookkeeping, financial statements, reporting, reconciliations, budgeting and audit-related support.",
     seoTitle: "Accounting Services Karachi | Bookkeeping, Financial Reporting & Audit Support",
@@ -187,6 +225,17 @@ export const services: Service[] = [
     heroImage: "/hero-accounting.jpg",
     intro:
       "TRT Associate supports businesses with accounting, financial reporting, bookkeeping, and audit-related services designed to improve financial visibility and support informed business decisions.",
+    overviewImage: "/ov-accounting.jpg",
+    overviewAlt: "Accounting professionals working at laptops with a calculator",
+    ctaImage: "/cta-accounting.jpg",
+    benefitsImage: "/benefit-accounting.jpg",
+    benefitsAlt: "A laptop showing financial charts next to printed reports",
+    overviewTitle: "Accounts you can understand, trust and act on",
+    overviewPoints: [
+      "Bookkeeping and reconciliations kept up to date",
+      "Financial statements and reports in a clear format",
+      "Honest scope on audit work and eligibility requirements",
+    ],
     itemsHeading: "Our Accounting & Audit Services",
     items: [
       { title: "Bookkeeping and Accounting", description: "Accurate recording and organization of financial transactions." },
@@ -237,6 +286,8 @@ export const services: Service[] = [
     icon: ShieldCheck,
     title: "Risk Management & Compliance",
     shortTitle: "Risk Management & Compliance",
+    cardImage: "/card-risk.jpg",
+    cardImageAlt: "Team reviewing business analytics during a risk discussion",
     cardDescription:
       "Risk assessments, internal controls, governance advisory and compliance monitoring for growing businesses.",
     seoTitle: "Risk Management Consultancy Pakistan | Compliance & Internal Controls Karachi",
@@ -252,6 +303,17 @@ export const services: Service[] = [
     heroImage: "/hero-risk.jpg",
     intro:
       "TRT Associate helps businesses identify potential risks, strengthen internal controls, and understand applicable regulatory and compliance requirements through structured consultancy and advisory support.",
+    overviewImage: "/ov-risk.jpg",
+    overviewAlt: "A business team reviewing charts and findings around a table",
+    ctaImage: "/cta-risk.jpg",
+    benefitsImage: "/benefit-risk.jpg",
+    benefitsAlt: "A colleague presenting charts and data to a team in a meeting room",
+    overviewTitle: "A practical look at what could go wrong, and what to do about it",
+    overviewPoints: [
+      "Structured identification and assessment of risks",
+      "Internal control and policy recommendations sized to your business",
+      "Support keeping compliance documentation organised",
+    ],
     itemsHeading: "Our Risk & Compliance Services",
     items: [
       { title: "Business Risk Assessment", description: "Identification and evaluation of potential business risks." },

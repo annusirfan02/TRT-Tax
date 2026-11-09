@@ -138,11 +138,13 @@ export default function HomePage() {
         heading="Why Choose TRT Associate"
         intro="A consultancy approach grounded in clarity, care and awareness of the regulatory environment in Pakistan."
         items={homeContent.whyChoose}
+        image="/why-us.jpg"
+        imageAlt="A colleague presenting charts to a team in a bright office"
       />
 
       <ProcessSteps id="process" heading="Our Working Process" steps={homeContent.process} />
 
-      <CtaSection />
+      <CtaSection image="/cta-home.jpg" />
     </>
   );
 }

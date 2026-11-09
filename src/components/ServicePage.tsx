@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Info } from "lucide-react";
 import { ButtonLink, Section, SectionHeading } from "./ui";
+import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { FaqList } from "./Faq";
 import { JsonLd } from "./JsonLd";
@@ -84,6 +85,41 @@ export function ServicePage({ service }: { service: Service }) {
         </div>
       </section>
 
+      {/* Overview with photo */}
+      <Section labelledBy="overview-h">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lift">
+              <Image
+                src={service.overviewImage}
+                alt={service.overviewAlt}
+                fill
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div id="overview-h">
+              <SectionHeading eyebrow="How We Help" title={service.overviewTitle} />
+            </div>
+            <ul className="mt-8 space-y-4">
+              {service.overviewPoints.map((p) => (
+                <li key={p} className="flex gap-3 text-base leading-relaxed text-grey-700">
+                  <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" aria-hidden="true" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-9">
+              <ButtonLink href={`/contact?service=${service.slug}#consultation`} arrow>
+                Talk to Our Team
+              </ButtonLink>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
       {/* Service list */}
       <Section id="services-list" tone="grey" labelledBy="items-h">
         <div id="items-h">
@@ -114,6 +150,8 @@ export function ServicePage({ service }: { service: Service }) {
         intro={service.benefitsIntro}
         items={service.benefits}
         eyebrow="Why It Matters"
+        image={service.benefitsImage}
+        imageAlt={service.benefitsAlt}
       />
 
       <ProcessSteps id="process" heading={service.processHeading} steps={service.process} />
@@ -144,6 +182,7 @@ export function ServicePage({ service }: { service: Service }) {
         title="Ready to Discuss Your Requirements?"
         description={`Request a consultation and tell us about your ${service.shortTitle.toLowerCase()} needs. We will explain what is involved and suggest practical next steps.`}
         service={service.slug}
+        image={service.ctaImage}
       />
     </>
   );

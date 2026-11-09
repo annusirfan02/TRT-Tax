@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, MapPin, MessageCircle, Phone, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { ButtonLink, Section, SectionHeading } from "@/components/ui";
@@ -44,7 +45,15 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
   return (
     <>
       <section className="relative overflow-hidden bg-navy-900 py-16 sm:py-24">
-        <div className="hero-fade pointer-events-none absolute inset-0" aria-hidden="true" />
+        <Image src="/contact-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover object-center" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(2,10,24,0.94) 0%, rgba(5,32,74,0.86) 45%, rgba(8,58,120,0.62) 100%)",
+          }}
+          aria-hidden="true"
+        />
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
           <SectionHeading
             as="h1"
