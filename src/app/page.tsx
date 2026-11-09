@@ -48,17 +48,26 @@ export default function HomePage() {
         />
         <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-100">
+            <p
+              className="hero-rise inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-100"
+              style={{ ["--d" as string]: "1.0s" }}
+            >
               Karachi, Pakistan
             </p>
-            <h1 className="mt-6 text-4xl font-extrabold !text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.07]">
+            <h1
+              className="hero-rise mt-6 text-4xl font-extrabold !text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.07]"
+              style={{ ["--d" as string]: "1.15s" }}
+            >
               Your Trusted Partner in Tax, Finance &amp; Corporate Compliance.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
+            <p
+              className="hero-rise mt-6 max-w-xl text-lg leading-relaxed text-brand-100"
+              style={{ ["--d" as string]: "1.3s" }}
+            >
               Helping individuals and businesses navigate taxation, financial management, corporate regulations, and
               compliance with confidence.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ ["--d" as string]: "1.45s" }}>
               <ButtonLink href="#services" variant="white" arrow>
                 Explore Our Services
               </ButtonLink>
@@ -67,7 +76,7 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-md lg:max-w-none">
+          <div className="hero-rise mx-auto w-full max-w-md lg:max-w-none" style={{ ["--d" as string]: "1.6s" }}>
             <HeroVisual />
           </div>
         </div>

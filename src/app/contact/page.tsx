@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, MapPin, MessageCircle, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { ButtonLink, Section, SectionHeading } from "@/components/ui";
 import { company, telHref, whatsappLink } from "@/lib/site";
@@ -97,15 +97,6 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                   </div>
                 </li>
               ))}
-              <li className="flex gap-4">
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-brand-600 shadow-sm">
-                  <Clock className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-grey-500">Office Hours</p>
-                  <p className="italic text-grey-500">[Office hours – to be added]</p>
-                </div>
-              </li>
             </ul>
             {wa ? (
               <ButtonLink href={wa} external className="mt-8 w-full">

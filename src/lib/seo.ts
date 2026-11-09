@@ -34,7 +34,7 @@ export function organizationSchema() {
     name: company.name,
     url: SITE_URL,
     description: company.description,
-    logo: `${SITE_URL}/logo.svg`,
+    logo: `${SITE_URL}/logo-mark.png`,
     areaServed: { "@type": "Country", name: "Pakistan" },
     address: {
       "@type": "PostalAddress",

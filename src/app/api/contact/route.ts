@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { contactSchema, serviceOptions } from "@/lib/contact-schema";
+import { mailConfigured, sendEnquiryEmails } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -44,6 +45,22 @@ export async function POST(request: Request) {
   // Honeypot filled: pretend success so bots learn nothing.
   if (website) return NextResponse.json({ ok: true });
 
+  const serviceLabel = serviceOptions.find((o) => o.value === data.service)?.label ?? data.service;
+
+  // Preferred path: email the firm and send the visitor a confirmation.
+  if (mailConfigured()) {
+    try {
+      await sendEnquiryEmails(data, serviceLabel);
+      return NextResponse.json({ ok: true });
+    } catch (err) {
+      console.error("Enquiry email failed:", err instanceof Error ? err.message : err);
+      return NextResponse.json(
+        { error: "We could not send your message right now. Please try again shortly or contact us directly." },
+        { status: 502 },
+      );
+    }
+  }
+
   const webhook = process.env.CONTACT_WEBHOOK_URL;
   if (!webhook) {
     // Be honest: nothing is delivered until a destination is configured.
@@ -55,8 +72,6 @@ export async function POST(request: Request) {
       { status: 503 },
     );
   }
-
-  const serviceLabel = serviceOptions.find((o) => o.value === data.service)?.label ?? data.service;
 
   try {
     const res = await fetch(webhook, {
