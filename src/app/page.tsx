@@ -58,14 +58,16 @@ export default function HomePage() {
               className="hero-rise mt-6 text-4xl font-extrabold !text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.07]"
               style={{ ["--d" as string]: "1.15s" }}
             >
-              Your Trusted Partner in Tax, Finance &amp; Corporate Compliance.
+              Clarity in Tax.
+              <span className="block text-brand-200">Confidence in Compliance.</span>
             </h1>
             <p
               className="hero-rise mt-6 max-w-xl text-lg leading-relaxed text-brand-100"
               style={{ ["--d" as string]: "1.3s" }}
             >
-              Helping individuals and businesses navigate taxation, financial management, corporate regulations, and
-              compliance with confidence.
+              TRT Associate guides individuals, startups and established businesses across Pakistan through income and
+              sales tax, SECP incorporation, accounting and audit support, and risk management, with clear advice,
+              well-organised documentation and careful attention to every regulatory requirement.
             </p>
             <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ ["--d" as string]: "1.45s" }}>
               <ButtonLink href="#services" variant="white" arrow>
