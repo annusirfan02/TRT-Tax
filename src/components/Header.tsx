@@ -62,6 +62,7 @@ export function Header() {
   const isActive = (href: string) => pathname === href;
 
   return (
+    <>
     <header
       className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur transition-shadow ${
         scrolled ? "border-grey-200 shadow-sm" : "border-transparent"
@@ -73,7 +74,7 @@ export function Header() {
       >
         Skip to main content
       </a>
-      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-8">
         <Logo />
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -133,8 +134,8 @@ export function Header() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <ButtonLink href="/contact#consultation" className="hidden !py-2.5 sm:inline-flex">
+        <div className="flex shrink-0 items-center gap-3">
+          <ButtonLink href="/contact#consultation" className="max-md:hidden !py-2.5 whitespace-nowrap">
             Get Consultation
           </ButtonLink>
           <button
@@ -149,12 +150,14 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer. Kept OUTSIDE <header>: the header's backdrop-blur would otherwise become the
+          containing block for this fixed element and collapse it to nothing. */}
       <div
         id="mobile-menu"
         hidden={!menuOpen}
-        className="fixed inset-x-0 bottom-0 top-[72px] overflow-y-auto border-t border-grey-200 bg-white lg:hidden"
+        className="fixed inset-x-0 bottom-0 top-[72px] z-40 overflow-y-auto border-t border-grey-200 bg-white lg:hidden"
       >
         <nav aria-label="Mobile" className="mx-auto max-w-7xl px-5 py-6 sm:px-8">
           <ul className="space-y-1 text-lg font-semibold text-navy-900">
@@ -204,6 +207,6 @@ export function Header() {
           </ButtonLink>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

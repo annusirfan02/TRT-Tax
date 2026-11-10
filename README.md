@@ -31,7 +31,6 @@ Also: `/sitemap.xml`, `/robots.txt`, `/api/contact`.
 - `NEXT_PUBLIC_SITE_URL` – **required for production** (canonical URLs, sitemap, Open Graph).
 - `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_CONTACT_PHONE`, `NEXT_PUBLIC_WHATSAPP_NUMBER` (digits with country code, e.g. `923001234567`), `NEXT_PUBLIC_OFFICE_ADDRESS` – until set, visible placeholders are shown and the WhatsApp button is hidden.
 - `CONTACT_WEBHOOK_URL` (+ optional `CONTACT_WEBHOOK_TOKEN`) – where `/api/contact` forwards validated enquiries as JSON. **Until set, the API returns 503 and the form tells visitors the message was not sent** (no fake success).
-- Social links: edit `company.social` in `src/lib/site.ts`.
 
 ## Editing content
 - Company data: `src/lib/site.ts`

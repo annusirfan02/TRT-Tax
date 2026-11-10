@@ -26,12 +26,13 @@ export function Logo({ tone = "light", className = "" }: { tone?: "light" | "dar
       />
       <span className="flex flex-col leading-none">
         <span
-          className={`font-display text-[1.35rem] font-extrabold tracking-tight ${dark ? "text-white" : "text-navy-900"}`}
+          className={`whitespace-nowrap font-display text-[1.2rem] font-extrabold tracking-tight sm:text-[1.35rem] ${dark ? "text-white" : "text-navy-900"}`}
         >
           TRT Associate
         </span>
+        {/* In the header the tagline is dropped on phones so the bar stays on one tidy row */}
         <span
-          className={`mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${dark ? "text-brand-200" : "text-grey-500"}`}
+          className={`mt-1 whitespace-nowrap text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${dark ? "text-brand-200" : "hidden text-grey-500 sm:block"}`}
         >
           Tax · Accounting · Compliance
         </span>

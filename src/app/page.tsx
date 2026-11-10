@@ -46,10 +46,12 @@ export default function HomePage() {
           }}
           aria-hidden="true"
         />
-        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
-          <div>
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-0 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:py-28">
+          {/* Below lg this wrapper is `contents`, so badge/heading/text/buttons and the chart become
+              siblings in one column and the chart can sit directly under the heading (see `order-*`). */}
+          <div className="contents lg:block">
             <p
-              className="hero-rise inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-100"
+              className="hero-rise inline-flex justify-self-start items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-100"
               style={{ ["--d" as string]: "1.0s" }}
             >
               Karachi, Pakistan
@@ -62,14 +64,14 @@ export default function HomePage() {
               <span className="block text-brand-200">Confidence in Compliance.</span>
             </h1>
             <p
-              className="hero-rise mt-6 max-w-xl text-lg leading-relaxed text-brand-100"
+              className="hero-rise order-2 mt-6 max-w-xl text-lg leading-relaxed text-brand-100 lg:order-none"
               style={{ ["--d" as string]: "1.3s" }}
             >
               TRT Associate guides individuals, startups and established businesses across Pakistan through income and
               sales tax, SECP incorporation, accounting and audit support, and risk management, with clear advice,
               well-organised documentation and careful attention to every regulatory requirement.
             </p>
-            <div className="hero-rise mt-9 flex flex-wrap gap-3" style={{ ["--d" as string]: "1.45s" }}>
+            <div className="hero-rise order-2 mt-9 flex flex-wrap gap-3 lg:order-none" style={{ ["--d" as string]: "1.45s" }}>
               <ButtonLink href="#services" variant="white" arrow>
                 Explore Our Services
               </ButtonLink>
@@ -78,7 +80,7 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="hero-rise mx-auto w-full max-w-md lg:max-w-none" style={{ ["--d" as string]: "1.6s" }}>
+          <div className="hero-rise order-1 mx-auto mt-8 w-full max-w-md lg:order-none lg:mt-0 lg:max-w-none" style={{ ["--d" as string]: "1.6s" }}>
             <HeroVisual />
           </div>
         </div>

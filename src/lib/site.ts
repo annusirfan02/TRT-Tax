@@ -32,8 +32,6 @@ export const company = {
     phone: "[Phone number – to be added]",
     address: "[Office address – to be added]",
   },
-  /** Social profile URLs. Leave empty until real profiles exist. */
-  social: { LinkedIn: "", Facebook: "", Instagram: "" } as Record<string, string>,
 };
 
 /** Converts a local Pakistani number (0312-2860658) into a tel: href (+923122860658). */

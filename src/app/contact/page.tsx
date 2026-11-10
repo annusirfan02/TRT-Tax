@@ -81,16 +81,16 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-brand-600 shadow-sm">
                     <r.icon className="h-5 w-5" aria-hidden="true" />
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-wider text-grey-500">{r.label}</p>
                     {r.label === "Phone" && company.phones.length > 0 ? (
                       <div className="flex flex-col">
                         {company.phones.map((n) => (
-                          <a key={n} href={telHref(n)} className="font-semibold text-navy-900 hover:text-brand-600">{n}</a>
+                          <a key={n} href={telHref(n)} className="inline-block py-1 font-semibold text-navy-900 hover:text-brand-600">{n}</a>
                         ))}
                       </div>
                     ) : r.href ? (
-                      <a href={r.href} className="font-semibold text-navy-900 hover:text-brand-600">{r.value}</a>
+                      <a href={r.href} className="inline-block break-all py-1 font-semibold text-navy-900 hover:text-brand-600">{r.value}</a>
                     ) : (
                       <p className={r.placeholder ? "italic text-grey-500" : "font-semibold text-navy-900"}>{r.value}</p>
                     )}

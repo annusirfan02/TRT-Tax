@@ -57,9 +57,9 @@ export function ServicePage({ service }: { service: Service }) {
         <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
           <nav aria-label="Breadcrumb" className="text-sm text-brand-200">
             <ol className="flex flex-wrap items-center gap-1.5">
-              <li><Link href="/" className="hover:text-white">Home</Link></li>
+              <li><Link href="/" className="inline-block py-1.5 hover:text-white">Home</Link></li>
               <li aria-hidden="true"><ChevronRight className="h-4 w-4" /></li>
-              <li><Link href="/#services" className="hover:text-white">Services</Link></li>
+              <li><Link href="/#services" className="inline-block py-1.5 hover:text-white">Services</Link></li>
               <li aria-hidden="true"><ChevronRight className="h-4 w-4" /></li>
               <li aria-current="page" className="text-white">{service.shortTitle}</li>
             </ol>
